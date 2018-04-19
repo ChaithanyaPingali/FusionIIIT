@@ -18,15 +18,31 @@
                         <option value="unavailable">Unavailable</option>
                     </select>
                 </div>
-
                 <div class="field">
                     <label>Quantity</label>
-                    <input placeholder="Quantity" class="ui large input" >
+                    <input type="text" placeholder="Quantity">
                 </div>
 
                 <div class="field">
                     <label>Estimated Cost</label>
-                    <input placeholder="Estimated Cost" class="ui large input" >
+                    <input placeholder="estimated_cost" value="0" class="ui large input" id="estimated_costInput" onchange="quantityInputOnChange(this.value)">
+                </div>
+            </div>
+
+            <div class="three fields" id="lpcFields" style="display: none;">
+                <div class="field" id="lpc1">
+                    <label>LPC Member 1</label>
+                    <input class="ui large fluid input">
+                </div>
+
+                <div class="field" id="lpc2">
+                    <label>LPC Member 2</label>
+                    <input class="ui large fluid input">
+                </div>
+                                        
+                <div class="field" id="lpc3">
+                    <label>LPC Member 3</label>
+                    <input class="ui large fluid input">
                 </div>
             </div>
 
@@ -131,7 +147,19 @@
 
             </div>
 
-            <div class="two fields">
+            <div class="three fields">
+                <div class="field">
+                            <label>Budgetary Authority</label>
+                            <select class="ui search fluid dropdown">
+                                <option value="">Select</option>
+                                <option value="available">Atul Gupta</option>
+                                <option value="processing">MK Bajpai</option>
+                                <option value="unavailable">P Khanna</option>
+                                <option value="available">P Tandon</option>
+                                <option value="processing">Sraban Mohanty</option>
+
+                            </select>
+                </div>
                 <div class="field">
                     <label>Inspecting Authority</label>
                     <input class="ui large input" placeholder="Inspecting Authority">
@@ -164,5 +192,3 @@
     <br>
     <br>
 </div>
-<br>
-<div class="extra content"></div>

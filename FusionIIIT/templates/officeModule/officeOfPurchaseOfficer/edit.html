@@ -1,22 +1,30 @@
-<form method='POST' id='add_vendors' action="/office/vendor/">
+<form method='POST' id='add_vendors' action="/office/editvendor/office/officeOfPurchaseOfficer/edit/">
     {% csrf_token %}
     {% comment %}The add a new skill Accordian starts here!{% endcomment %}
     <div class="ui form" style="padding: 8px; padding-left: 56px; padding-right: 36px;">
 
         <div class="ui two fields">
+            <div class="ui eight wide field">
+                <label>
+                    Vendor ID
+                </label>
+                <input class="ui large input" name="vendor_id" placeholder="Vendor ID" value="{{ p.id }}" type="text">
+            </div>  
+
+            
 
             <div class="ui eight wide field">
                 <label>
                     Vendor Name
                 </label>
-                <input class="ui large input" name="vendor_name" placeholder="Vendor Name" type="text">
-            </div>
+                <input class="ui large input" name="vendor_name" placeholder="Vendor Name" value="{{ p.vendor_name }}" type="text">
+            </div>  
 
             <div class="ui eight wide field">
                 <label>
                     Item
                 </label>
-                <input class="ui large input" name="vendor_item" placeholder="Item" type="text">
+                <input class="ui large input" name="vendor_item" placeholder="Item" value="{{ p.vendor_item }}"type="text">
             </div>
         </div>
 
@@ -24,7 +32,7 @@
             <label>
                 Address
             </label>
-            <textarea rows="2" name="vendor_address"></textarea>
+            <input name="vendor_address" value="{{ p.vendor_address }}"></textarea>
         </div>
 
         <label>
