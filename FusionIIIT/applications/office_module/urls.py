@@ -8,6 +8,8 @@ urlpatterns = [
 
     url(r'^officeOfDeanStudents/', views.officeOfDeanStudents, name='officeOfDeanStudents'),
     url(r'^officeOfPurchaseOfficer/',views.officeOfPurchaseOfficer, name ='officeOfPurchaseOfficer'),
+    url(r'^apply_purchase/', views.apply_purchase, name='apply_purchase'),
+    url(r'^after_purchase/', views.after_purchase, name='after_purchase'),
     url(r'^officeOfRegistrar/', views.officeOfRegistrar, name='officeOfRegistrar'),
     url(r'^officeOfDeanRSPC/', views.officeOfDeanRSPC, name='officeOfDeanRSPC'),
     url(r'^officeOfDeanPnD/', views.officeOfDeanPnD, name='officeOfDeanPnD'),

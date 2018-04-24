@@ -62,7 +62,7 @@ class vendor(models.Model):
 
 
 
-class apply_for_purchase(models.Model):
+'''class apply_for_purchase(models.Model):
     indentor_name = models.ForeignKey(ExtraInfo, on_delete=models.CASCADE,related_name='indentor_name')
     designation = models.ForeignKey(Designation, on_delete=models.CASCADE)
     inspecting_authority = models.ForeignKey(ExtraInfo, on_delete=models.CASCADE,related_name='inspecting_authority')
@@ -89,7 +89,36 @@ class apply_for_purchase(models.Model):
     quantity = models.IntegerField(default='0')
 
     class Meta:
-        db_table = 'apply_for_purchase'
+        db_table = 'apply_for_purchase'  '''
+
+class apply_for_purchase(models.Model):
+    indentor_name = models.ForeignKey(ExtraInfo, on_delete=models.CASCADE,related_name='indentor_name')
+    # designation = models.ForeignKey(Designation, on_delete=models.CASCADE)
+    inspecting_authority = models.CharField(max_length=200, default='0')
+    expected_purchase_date = models.DateField()
+    order_date = models.DateField(default=datetime.date.today)
+    purchase_status = models.IntegerField(choices=PURCHASE_STATUS, default=0)
+    # purchase_officer = models.ForeignKey(Staff, on_delete=models.CASCADE, default='0')
+    amount = models.IntegerField(default='0')
+    purchase_date = models.DateField(default='2018-06-01')
+
+    registrar_approve_tag = models.IntegerField(choices=APPROVE_TAG, default=0)
+    accounts_approve_tag = models.IntegerField(choices=APPROVE_TAG, default=0)
+
+    purchase_type = models.IntegerField(choices=PURCHASE_TYPE, default=0)
+    purpose = models.CharField(max_length=200, default=0)
+
+    budgetary_head = models.CharField(max_length=200, default=0)
+    invoice = models.FileField(default=0)
+    nature_of_item1 = models.IntegerField(choices=NATURE_OF_ITEM1, default=0)
+    nature_of_item2 = models.IntegerField(choices=NATURE_OF_ITEM2, default=0)
+
+    item_name = models.CharField(max_length=100, default=0)
+    expected_cost = models.IntegerField(default=0)
+    quantity = models.IntegerField(default=0)
+
+    class Meta:
+        db_table = 'apply_for_purchase'        
 
 class stock(models.Model):
     item_name = models.CharField(max_length=100)
